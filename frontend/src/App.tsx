@@ -1,18 +1,24 @@
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Header } from './components/Header'
+import { Home } from './pages/Home'
+import { Search } from './pages/Search'
+import { About } from './pages/About'
+import { Contact } from './pages/Contact'
 
 function App() {
   return (
-    <div className="min-h-screen bg-brand-orange-light flex items-center justify-center p-4">
-      <div className="text-center max-w-md mx-auto">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-brand-orange">
-          Parkrun Accessibility
-        </h1>
-        <p className="text-lg text-neutral-dark-grey mb-8">
-          Coming soon...
-        </p>
-        <div className="w-16 h-1 bg-secondary-deep-blue mx-auto rounded-full"></div>
+    <Router>
+      <div className="app">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   )
 }
 
