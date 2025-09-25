@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import logoSvg from '/logo.svg'
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -22,7 +23,7 @@ export function Header() {
           {/* Logo/Brand */}
           <Link to="/" className="flex items-center hover:opacity-90 transition-opacity" onClick={closeMobileMenu}>
             <img 
-              src="/logo.svg" 
+              src={logoSvg} 
               alt="Parkrun Accessibility" 
               className="h-12 w-12 mr-3 flex-shrink-0"
             />
